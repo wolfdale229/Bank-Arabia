@@ -1,0 +1,155 @@
+2022-07-31 22:25:10 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SCHEMA_MIGRATIONS" not found; SQL statement:
+SELECT 1 FROM schema_migrations [42102-200]
+2022-07-31 23:15:40 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO ACCOUNT_HOLDER(ACCOUNT_HOLDER_ID, FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, PHONE_NUMBER, RESIDENTIAL_ADDRESS)
+VALUES (?, ?, ?, ?, ?, ?)
+WHERE[*] USERNAME = ?"; SQL statement:
+insert into account_holder(account_holder_id, first_name, last_name, email_address, phone_number, residential_address)
+values (?, ?, ?, ?, ?, ?)
+where username = ? [42000-200]
+2022-07-31 23:17:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO ACCOUNT_HOLDER(ACCOUNT_HOLDER_ID, FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, PHONE_NUMBER, RESIDENTIAL_ADDRESS)
+VALUES (?, ?, ?, ?, ?, ?)
+WHERE[*] USERNAME = USERNAME"; SQL statement:
+insert into account_holder(account_holder_id, first_name, last_name, email_address, phone_number, residential_address)
+values (?, ?, ?, ?, ?, ?)
+where username = username [42000-200]
+2022-07-31 23:18:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO ACCOUNT_HOLDER(ACCOUNT_HOLDER_ID, FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, PHONE_NUMBER, RESIDENTIAL_ADDRESS)
+VALUES (?, ?, ?, ?, ?, ?)
+WITH[*] USERNAME = ?"; SQL statement:
+insert into account_holder(account_holder_id, first_name, last_name, email_address, phone_number, residential_address)
+values (?, ?, ?, ?, ?, ?)
+with username = ? [42000-200]
+2022-07-31 23:19:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO ACCOUNT_HOLDER(ACCOUNT_HOLDER_ID, FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, PHONE_NUMBER, RESIDENTIAL_ADDRESS)
+VALUES (?, ?, ?, ?, ?, ?)
+WITH[*] USERNAME = USERNAME"; SQL statement:
+insert into account_holder(account_holder_id, first_name, last_name, email_address, phone_number, residential_address)
+values (?, ?, ?, ?, ?, ?)
+with username = username [42000-200]
+2022-07-31 23:20:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO ACCOUNT_HOLDER(ACCOUNT_HOLDER_ID, FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, PHONE_NUMBER, RESIDENTIAL_ADDRESS)
+VALUES (?, ?, ?, ?, ?, ?)
+SET[*] USERNAME = USERNAME"; SQL statement:
+insert into account_holder(account_holder_id, first_name, last_name, email_address, phone_number, residential_address)
+values (?, ?, ?, ?, ?, ?)
+set username = username [42000-200]
+2022-07-31 23:21:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO ACCOUNT_HOLDER(ACCOUNT_HOLDER_ID, FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, PHONE_NUMBER, RESIDENTIAL_ADDRESS)
+VALUES (?, ?, ?, ?, ?, ?)
+SET[*] USERNAME = ?"; SQL statement:
+insert into account_holder(account_holder_id, first_name, last_name, email_address, phone_number, residential_address)
+values (?, ?, ?, ?, ?, ?)
+set username = ? [42000-200]
+2022-07-31 23:24:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE ACCOUNT_HOLDER
+SET ACCOUNT_HOLDER_ID = ACCOUNT_HOLDER_ID, FIRST_NAME = FIRST_NAME,
+       LAST_NAME = LAST_NAME, EMAIL_ADDRESS = EMAIL_ADDRESS,
+       PHONE_NUMBER = PHONE_NUMBER, RESIDENTIAL_ADDRESS = RESIDENTIAL_ADDRESS)[*]
+WHERE USERNAME = ?"; SQL statement:
+update account_holder
+set account_holder_id = account_holder_id, first_name = first_name,
+       last_name = last_name, email_address = email_address,
+       phone_number = phone_number, residential_address = residential_address)
+where username = ? [42000-200]
+2022-07-31 23:36:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Numeric value out of range: "6108377221" in column "ACCOUNT_HOLDER_ID"; SQL statement:
+update account_holder
+set account_holder_id = ?, first_name = ?,
+       last_name = ?, email_address = ?,
+       phone_number = ?,
+       residential_address = ?
+where username = ? [22004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.value.Value.convertToInt(Value.java:1649)
+	at org.h2.value.Value.convertToInt(Value.java:970)
+	at org.h2.value.Value.convertTo(Value.java:806)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Update.update(Update.java:176)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:240)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at next.jdbc.result_set$stmt__GT_result_set.invokeStatic(result_set.clj:646)
+	at next.jdbc.result_set$stmt__GT_result_set.invoke(result_set.clj:641)
+	at next.jdbc.result_set$eval11398$fn__11406.invoke(result_set.clj:921)
+	at next.jdbc.protocols$eval10667$fn__10668$G__10658__10677.invoke(protocols.clj:33)
+	at next.jdbc$execute_BANG_.invokeStatic(jdbc.clj:241)
+	at next.jdbc$execute_BANG_.invoke(jdbc.clj:225)
+	at hugsql.adapter.next_jdbc.HugsqlAdapterNextJdbc.execute(next_jdbc.clj:14)
+	at hugsql.adapter$eval12490$fn__12581$G__12470__12586.invoke(adapter.clj:3)
+	at hugsql.adapter$eval12490$fn__12581$G__12469__12592.invoke(adapter.clj:3)
+	at clojure.lang.Var.invoke(Var.java:399)
+	at hugsql.core$db_fn_STAR_$y__12907.doInvoke(core.clj:458)
+	at clojure.lang.RestFn.invoke(RestFn.java:445)
+	at hugsql.core$db_fn_STAR_$y__12907.invoke(core.clj:448)
+	at conman.core$try_query$fn__13285$fn__13286.invoke(core.clj:32)
+	at bank_arabia.db.core$eval26044$f__13313__auto____26071.invoke(form-init5210988590411522790.clj:1192)
+	at bank_arabia.db.core$eval26095.invokeStatic(form-init5210988590411522790.clj:1250)
+	at bank_arabia.db.core$eval26095.invoke(form-init5210988590411522790.clj:1250)
+	at clojure.lang.Compiler.eval(Compiler.java:7194)
+	at clojure.lang.Compiler.eval(Compiler.java:7149)
+	at clojure.core$eval.invokeStatic(core.clj:3215)
+	at clojure.core$eval.invoke(core.clj:3211)
+	at nrepl.middleware.interruptible_eval$evaluate$fn__16639$fn__16640.invoke(interruptible_eval.clj:87)
+	at clojure.lang.AFn.applyToHelper(AFn.java:152)
+	at clojure.lang.AFn.applyTo(AFn.java:144)
+	at clojure.core$apply.invokeStatic(core.clj:667)
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1990)
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1990)
+	at clojure.lang.RestFn.invoke(RestFn.java:425)
+	at nrepl.middleware.interruptible_eval$evaluate$fn__16639.invoke(interruptible_eval.clj:87)
+	at clojure.main$repl$read_eval_print__9206$fn__9209.invoke(main.clj:437)
+	at clojure.main$repl$read_eval_print__9206.invoke(main.clj:437)
+	at clojure.main$repl$fn__9215.invoke(main.clj:458)
+	at clojure.main$repl.invokeStatic(main.clj:458)
+	at clojure.main$repl.doInvoke(main.clj:368)
+	at clojure.lang.RestFn.invoke(RestFn.java:1523)
+	at nrepl.middleware.interruptible_eval$evaluate.invokeStatic(interruptible_eval.clj:84)
+	at nrepl.middleware.interruptible_eval$evaluate.invoke(interruptible_eval.clj:56)
+	at nrepl.middleware.interruptible_eval$interruptible_eval$fn__16672$fn__16676.invoke(interruptible_eval.clj:152)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at nrepl.middleware.session$session_exec$main_loop__16742$fn__16746.invoke(session.clj:218)
+	at nrepl.middleware.session$session_exec$main_loop__16742.invoke(session.clj:217)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-08-01 16:30:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD VARCHAR(10)": "'adminpassword' (13)"; SQL statement:
+insert into account_holder (username, password)
+values(?, ?) [22001-200]
+2022-08-01 16:31:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD VARCHAR(10)": "'adminpassword' (13)"; SQL statement:
+insert into account_holder (username, password)
+values(?, ?) [22001-200]
+2022-08-01 16:31:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD VARCHAR(10)": "'adminpassword' (13)"; SQL statement:
+insert into account_holder (username, password)
+values(?, ?) [22001-200]
+2022-08-01 16:31:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD VARCHAR(10)": "'adminpassword' (13)"; SQL statement:
+insert into account_holder (username, password)
+values(?, ?) [22001-200]
+2022-08-01 16:32:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD VARCHAR(10)": "'adminpassword' (13)"; SQL statement:
+insert into account_holder (username, password)
+values(?, ?) [22001-200]
+2022-08-01 19:15:33 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD VARCHAR(20)": "'bcrypt+sha512$d3f5a57628fce98b79ebabf8f48bcffa$12$c812e2325e54274d9bec790b63f8b6ddc963cb4c45862314' (98)"; SQL statement:
+insert into account_holder (username, password)
+values(?, ?) [22001-200]
+2022-08-01 19:15:58 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD VARCHAR(20)": "'bcrypt+sha512$6efab480d38ddeca0f1a0b98441918bf$12$9910faa075a7c64d79ec62e498c5ccc14ba35174ac75486d' (98)"; SQL statement:
+insert into account_holder (username, password)
+values(?, ?) [22001-200]
+2022-08-01 19:16:14 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD VARCHAR(20)": "'bcrypt+sha512$f5717e198b3cd9280671720889870339$12$0336655471b38b065aa02aee645d5b88f5837926f03f3f2d' (98)"; SQL statement:
+insert into account_holder (username, password)
+values(?, ?) [22001-200]
