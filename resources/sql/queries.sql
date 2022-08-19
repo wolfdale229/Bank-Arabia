@@ -1,4 +1,4 @@
--- :name create-customer :! :n
+-- :name create-user! :! :n
 -- :doc create a new customer using the username and password keys
 insert into account_holder (username, password)
 values(:username, :password)
@@ -15,7 +15,7 @@ where username = :username
 -- :name delete-customer :! :n
 -- :doc delete a customers records
 delete from account_holder
-where account_holder_id = :account_holder_id
+where username = :username
 
 -- :name select-customers :* :?
 -- :doc select all available customers
