@@ -1,5 +1,7 @@
-# bank_arabia
-
+# Bank Arabia
+This is my implementation of the Banking on Clojure web application, created by John Stevenson (practicalli)
+https://github.com/practicalli/banking-on-clojure-webapp.
+This is a free to use code base
 generated using Luminus version "4.38"
 
 FIXME
